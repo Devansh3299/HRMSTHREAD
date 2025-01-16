@@ -1,0 +1,739 @@
+.navbar {
+    background-color: #042b54;
+    color: white;
+    text-align: center;
+    padding: 7px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .leave-dashboard {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    margin: 20px auto;
+  }
+  .calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1976d2; /* Material blue color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #1565c0; /* Darker blue for hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  button:active {
+    background-color: #0d47a1; /* Even darker blue for active state */
+    transform: scale(1); /* Reset scale on click */
+  }
+  
+  button mat-icon {
+    font-size: 20px;
+  }
+  
+  
+  mat-form-field {
+    width: 300px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .leave-type {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .circle-chart {
+    display: inline-block;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .circular-chart .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circular-chart .circle {
+    fill: none;
+    stroke: #3e98c7;
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+  
+  .details-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .details-btn:hover {
+    background-color: #0056b3;
+  }
+  /* Style for the heading container */
+  /* Style for the heading container */
+  .heading {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 0px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    width: 98%;
+    margin-top: 80px;
+    margin-left: 15px;
+  }
+  
+  /* Style for the <h4> element inside the heading container */
+  .heading h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 30px;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    background-color: #f4f4f9;
+    margin-top: 10px;
+    overflow-y: auto;
+  }
+  /* Left Panel */
+  .left-panel .left-panel {
+    flex: 0 0 30%;
+    height: 50%;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-left: -30%;
+  }
+  
+  label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  .header {
+    text-align: center;
+  }
+  
+  .header h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .time-display {
+    margin: 20px 0;
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .time-display p {
+    margin: 5px 0;
+  }
+  
+  .buttons {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;  /* Align buttons side by side */
+    gap: 10px;
+    justify-content: center; /* Center buttons horizontally */
+  }
+  
+  .buttons button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;  /* Reduced padding to make buttons smaller */
+    font-size: 0.9rem;  /* Decreased font size */
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .marked-times {
+    margin-top: 30px;
+    background-color: #f0f8ff;
+    border: 1px solid #d0e7f7;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .marked-times p:first-child {
+    color: #4caf50;
+  }
+  
+  .marked-times p:last-child {
+    color: #f44336;
+  }
+  
+  /* Roster Section */
+  .roster-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .roster-section h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .date-controls {
+    margin-bottom: 10px;
+  }
+  
+  .date-controls mat-form-field {
+    width: 100%;
+  }
+  
+  .roster-section p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  
+  
+  /* Right Panel */
+  /* Right Panel */
+  .right-panel {
+    flex: 0 0 100%;
+    width: 110%;
+    height: 89%;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: -20%;
+    margin-top: 10px;
+  }
+  .attendance-summary {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  .commondiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px; /* Adjust spacing between panels */
+    padding: 30px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 8px; /* Rounded corners for a modern look */
+  width: 96%;
+  flex-flow: row;
+  margin-top: 10px;
+  
+  }
+  
+  .attendance-summary h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .attendance-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .attendance-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .attendance-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+    height: 40px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem; /* Adjusted for better readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin-top: 10px;
+  }
+  
+  .attendance-box.present {
+    background-color: #26e629;
+  }
+  
+  .attendance-box.absent {
+    background-color: red;
+  }
+  
+  .attendance-box.leave {
+    background-color: #2d53ec;
+  }
+  
+  .attendance-box.lwp {
+    background-color: darkgoldenrod;
+  }
+  
+  .attendance-box.leave-submit {
+    background-color: rgb(46, 68, 4);
+  }
+  
+  .attendance-box.attendance-submit {
+    background-color: rgb(247, 8, 76);
+  }
+  
+  .attendance-box.phy {
+    background-color: rgb(224, 4, 253);
+  }
+  
+  .attendance-box.weo {
+    background-color: rgb(55, 139, 75);
+  }
+  
+  .attendance-box.reminders {
+    background-color: rgb(69, 27, 2);
+  }
+  
+  .attendance-box.half-day {
+    background-color: rgb(53, 30, 80);
+  }
+  
+  .attendance-box.blocked {
+    background-color: rgb(96, 120, 0);
+  }
+  
+  .status-count {
+    font-size: 14px;
+  
+  }
+  
+  
+  .upcoming-holidays {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -1;
+  }
+  
+  .upcoming-holidays h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  .holiday-list {
+    margin-top: 10px;
+  }
+  .holiday-section {
+    margin: 10px 0;
+  }
+  
+  .holiday-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .view-holidays-link {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30px;
+  }
+  
+  .view-holidays-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+    
+  }
+  .vertical-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 15px; /* Reduced spacing between items */
+    width: 40%; /* Decreased width */
+    margin: 15px auto; /* Reduced vertical and horizontal margin */
+  }
+  
+  .attendance-sum-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 40%;
+  }
+  
+  .sum-box {
+    background-color: #ffe0e0;
+    width: 40%;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.9rem;
+    margin-left: 25%;
+    margin-top: -13%;
+  }
+  .attendance-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px auto;
+    width: 100%;
+    gap: 10px
+  }
+  
+  .date-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .date-filter input[type='date'] {
+    padding: 5px;
+  }
+  
+  .summary-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 5px;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .card.all-record {
+    background-color: #36c4c4;
+    color: white;
+    width: 15%;
+  }
+  
+  .card.submitted {
+    background-color: #4285f4;
+    color: white;
+    width: 15%;
+  }
+  
+  .card.accepted {
+    background-color: #34a853;
+    color: white;
+    width: 15%;
+  }
+  
+  .card.rejected {
+    background-color: #ea4335;
+    color: white;
+    width: 15%;
+  }
+  
+  .card.cancelled {
+    background-color: #fbbc05;
+    color: white;
+    width: 15%;
+  }
+  
+  .card.new-application {
+    background-color: #007bff;
+    color: white;
+    width: 15%;
+  }
+  
+  .no-records {
+    margin-top: 20px;
+    color: #555;
+  }
+  
+  .no-records img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  /* You can add global styles to this file, and also import other style files */
+  
+  /*html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+  /* Calendar Panel */
+  .calendar-panel {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50%;
+    width: 180%;
+    overflow: hidden;
+    margin-left: -200px;
+    margin-top: 10px;
+    z-index: 0;
+  }
+  
+  .fc-toolbar h2 {
+    font-size: 0.1rem;
+    color: #333;
+  }
+  
+  /* Button Group in Toolbar */
+  .fc-toolbar .fc-button-group {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Individual Buttons */
+  .fc-toolbar .fc-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 5px;
+    font-size: 0.80rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  /* Button Hover Effect */
+  .fc-toolbar .fc-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Disabled Button Style */
+  .fc-toolbar .fc-button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+  
+  .fc-toolbar .fc-button.fc-prev-year-button,
+  .fc-toolbar .fc-button.fc-next-year-button {
+    background-color: #5a6268;
+    color: white;
+    margin-left: 20px;
+  }
+  
+  .fc-toolbar .fc-button.fc-prev-year-button:hover,
+  .fc-toolbar .fc-button.fc-next-year-button:hover {
+    background-color: #3d474f;
+  }
+  
+  @media (min-width: 1024px) {
+    .navbar {
+      padding: 10px 0;
+      font-size: 1rem;
+    }
+    .heading {
+      height: 60px; /* Increase height for better proportion */
+      font-size: 1.2rem; /* Larger font size for desktop readability */
+      margin-left: 20px; /* Adjust margins for a cleaner desktop layout */
+      width: 96%; /* Reduce width slightly for better alignment */
+    }
+    .dashboard-container {
+      flex-direction: row; /* Maintain row layout for larger screens */
+      gap: 20px;
+      padding: 20px;
+    }
+    .left-panel {
+      flex: 0 0 25%; /* Slightly smaller width for desktops */
+      margin-left: 0; /* Proper alignment */
+    }
+    .calendar-panel {
+      height: 60%; /* Slightly larger height for desktops */
+      width: 90%; /* Adjusted width for better alignment */
+      margin-left: 0; /* Remove negative margin */
+      margin-top: 20px; /* Provide more spacing */
+    }
+    .right-panel {
+      width: 90%; /* Adjust the width for desktops */
+      margin-left: 0; /* Reset the margin for proper alignment */
+      height: 80%; /* Adjust height for better proportions on desktop */
+      padding: 25px; /* Slightly reduced padding for better use of space */
+    }
+    .commondiv {
+      width: 96%; /* Keeps width consistent */
+      padding: 30px; /* Maintain padding for desktop */
+      gap: 20px; /* Increase gap for larger screens */
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+      padding: 8px 0;
+      font-size: 0.95rem;
+    }
+    .heading {
+      height: 55px; /* Slightly larger for tablets */
+      font-size: 1rem; /* Moderate font size for tablets */
+      margin-left: 10px; /* Adjust margin for tablet screens */
+      width: 97%; /* Slightly reduced width for better spacing */
+    }
+    .dashboard-container {
+      flex-direction: column; /* Switch to column layout for tablets */
+      gap: 15px; /* Reduce the gap for tighter layouts */
+      padding: 15px;
+    }
+    .left-panel {
+      flex: 0 0 35%; /* Adjust width for tablets */
+      height: auto; /* Allow flexibility for content height */
+      margin-left: 0; /* Align to fit the screen properly */
+      margin-top: 15px; /* Slightly increased margin for spacing */
+    }
+    .calendar-panel {
+      height: 50%; /* Maintain similar height for tablets */
+      width: 95%; /* Adjust width for medium screens */
+      margin-left: 0; /* Center it properly */
+      margin-top: 15px; /* Adjust spacing for consistency */
+    }
+    .right-panel {
+      width: 95%; /* Reduced width for tablets */
+      margin-left: 0; /* Align it properly */
+      height: 75%; /* Adjust height for smaller screens */
+      padding: 20px; /* Reduced padding for smaller screen */
+    }
+    .commondiv {
+      flex-flow: row wrap; /* Stack items if needed for tablets */
+      gap: 15px; /* Moderate gap for tablets */
+      padding: 20px; /* Reduce padding for tablets */
+    }
+  }
+  @media (max-width: 767px) {
+    .navbar {
+      padding: 6px 0;
+      font-size: 0.85rem;
+      text-align: left; /* Example: Adjust for a more mobile-friendly layout */
+      padding-left: 10px; /* Add left padding for alignment */
+    }
+    .heading {
+      height: 45px; /* Compact height for mobile */
+      font-size: 0.9rem; /* Smaller font size for mobile screens */
+      padding: 0px 10px; /* Adjust padding for smaller screens */
+      margin-top: 70px; /* Reduce top margin for compact view */
+      margin-left: 5px; /* Adjust left margin for better fit */
+      width: 95%; /* Adjust width for smaller screens */
+    }
+    .dashboard-container {
+      flex-direction: column; /* Column layout for mobile screens */
+      gap: 10px; /* Further reduce the gap for compact layouts */
+      padding: 10px; /* Smaller padding for mobile devices */
+      height: auto; /* Adjust height for scrolling content */
+    }
+    .left-panel {
+      flex: 0 0 100%; /* Full width for smaller screens */
+      height: auto; /* Content adjusts dynamically */
+      margin-left: 0; /* Reset margin for proper alignment */
+      margin-top: 15px; /* Maintain spacing from other elements */
+    }
+    .calendar-panel {
+      height: auto; /* Allow dynamic height for content */
+      width: 100%; /* Use full width on small screens */
+      padding: 15px; /* Reduce padding for compactness */
+      margin-left: 0; /* Reset margin for proper alignment */
+      margin-top: 10px; /* Maintain spacing */
+    }
+    .right-panel {
+      width: 100%; /* Full width on mobile screens */
+      height: auto; /* Allow height to adjust based on content */
+      margin-left: 0; /* Remove negative margin */
+      padding: 15px; /* Further reduce padding for a compact look */
+      margin-top: 15px; /* Adjust margin for mobile screens */
+    }
+    .commondiv {
+      flex-flow: column; /* Stack items vertically on mobile */
+      gap: 10px; /* Reduced gap for mobile screens */
+      padding: 15px; /* Reduced padding for mobile */
+      width: 100%; /* Full width on mobile */
+    }
+  }

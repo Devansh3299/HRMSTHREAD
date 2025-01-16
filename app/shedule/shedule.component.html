@@ -1,0 +1,225 @@
+<!-- Left Panel -->
+<div class="navbar">
+  <h2>Intellisys IT Solutions Private Limited</h2>
+</div>
+
+<div class="heading">
+  <h4>Time And Attendace</h4>
+</div>
+<div class="commondiv">
+
+
+  <div class="divleft">
+    <div class="dashboard-container">
+      <div class="left-panel">
+        <div class="checkbox-container">
+          <label>
+            <input type="checkbox" [(ngModel)]="isChecked">
+          </label>
+        </div>
+        <div class="header">
+          <h3>Current date And Time</h3>
+          <div class="time-display">
+            <p>{{ currentDate }}</p>
+            <p>{{ currentTime }}</p>
+          </div>
+          <div class="buttons">
+            <button (click)="onMarkInTime()">Mark In Time</button>
+            <button (click)="onMarkOutTime()">Mark Out Time</button>
+          </div>
+          <div class="marked-times">
+            <p><strong>Marked In Time:</strong> {{ markInTime }}</p>
+            <p><strong>Marked Out Time:</strong> {{ markOutTime }}</p>
+          </div>
+        </div>
+        <div class="roster-section">
+          <h4>Roster</h4>
+          <div class="date-controls">
+            <mat-form-field appearance="fill">
+              <mat-label>Select Date</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+          </div>
+          <p><strong>Shift Name:</strong> {{ roster.shiftName }}</p>
+          <p><strong>Shift Timing:</strong> {{ roster.shiftTiming }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="divcenter">
+    <!-- Calendar Panel -->
+    <div class="calendar-panel">
+      <full-calendar
+      [options]="calendarOptions"
+      (dateClick)="onDateClick($event)">
+    </full-calendar>
+    </div>
+   
+  </div>
+
+
+  <!-- Right Panel -->
+  <div class="divright">
+    <div class="right-panel">
+      <div class="attendance-summary">
+        <h3>Absence In Current Month</h3>
+
+        <!-- Attendance Container -->
+        <div class="attendance-container">
+          <!-- First Row: Present & Absent -->
+          <div class="attendance-row">
+            <div class="attendance-box present">
+              <div class="attendance-details">
+                <p class="status-count"> Present {{ attendanceSummary.present }}</p>
+              </div>
+
+            </div>
+            <div class="attendance-box absent">
+              <div class="attendance-details">
+                <p class="status-count">Absent {{ attendanceSummary.absent }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Row: Leave & LWP -->
+          <div class="attendance-row">
+            <div class="attendance-box leave">
+              <div class="attendance-details">
+                <p class="status-count">Leave {{ attendanceSummary.leave }}</p>
+              </div>
+            </div>
+
+            <div class="attendance-box lwp">
+              <div class="attendance-details">
+                <p class="status-count">LWP {{ attendanceSummary.lwp }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Row: Leave Submit & Attendance Submit -->
+          <div class="attendance-row">
+            <div class="attendance-box leave-submit">
+              <div class="attendance-details">
+                <p class="status-count">Leave (Submit) {{ attendanceSummary.leaveSubmit }}</p>
+              </div>
+            </div>
+            <div class="attendance-box attendance-submit">
+              <div class="attendance-details">
+                <p class="status-count">Attendance (Submit) {{ attendanceSummary.attendanceSubmit }}</p>
+              </div>
+            </div>
+          </div>
+       
+
+          <!-- Fourth Row: PHY & WEO -->
+          <div class="attendance-row">
+            <div class="attendance-box phy">
+              <div class="attendance-details">
+                <p class="status-count">PHY {{ attendanceSummary.phy }}</p>
+              </div>
+
+            </div>
+            <div class="attendance-box weo">
+              <div class="attendance-details">
+                <p class="status-count">WEO {{ attendanceSummary.weo }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fifth Row: Reminders & Half Day -->
+          <div class="attendance-row">
+            <div class="attendance-box reminders">
+              <div class="attendance-details">
+                <p class="status-count">Reminders {{ attendanceSummary.reminders }}</p>
+              </div>
+            </div>
+            <div class="attendance-box half-day">
+              <div class="attendance-details">
+                <p class="status-count">Half Day {{ attendanceSummary.halfDay }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sixth Row: Blocked -->
+          <div class="attendance-row">
+            <div class="attendance-box blocked">
+              <div class="attendance-details">
+                <p class="status-count">Blocked (DOJ/DOE) {{ attendanceSummary.blocked }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="upcoming-holidays">
+        <h4>
+          Upcoming Holidays
+          <a routerLink="/holidays" class="view-holidays-link"> View Holidays</a>
+
+        </h4>
+        <div class="holiday-list">
+          <br>
+          <p *ngIf="!holidays.length">No Records to Display</p>
+          <ul *ngIf="holidays.length">
+            <li *ngFor="let holiday of holidays">{{ holiday.name }} - {{ holiday.date }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="sum-box">
+      <h3>Date: 31 Dec 2024</h3>
+      <p>In:{{ markInTime }}</p>
+      <p>Attendance: ABS</p>
+      <p>Shift: General Shift</p>
+    </div>
+  </div>
+</div>
+<div class="attendance-sum">
+  
+  <div class="attendance-container">
+    <h3>Attendance Application</h3>
+    <div class="date-filter">
+      <label for="attendance-date">Showing Attendance From</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="attendanceDate"
+          id="attendance-date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      <!-- Refresh Button -->
+      <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
+    </div>
+  
+    <!-- Attendance Summary Cards -->
+    <div class="summary-cards">
+      <div
+        class="card"
+        *ngFor="let card of cards"
+        [ngClass]="card.class"
+        (click)="handleCardClick(card)"
+      >
+        <span>{{ card.label }}</span>
+        <span class="count">{{ card.count }}</span>
+      </div>
+    </div>
+  
+    <!-- No Records Section -->
+    <div class="no-records">
+    <!--<img src="assets/no-records.svg" alt="No Records" />-->
+      <p>No Records to Display</p>
+    </div>
+  </div>
+  
+  
+</div>

@@ -1,0 +1,202 @@
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+  </head>
+  <div class="leave-container">
+      <div class="add-leave-header">
+        <div class="buttons-container">
+          <button type="submit" class="submit-button"><i class="fa fa-paper-plane"></i>Submit</button>
+          <button type="button" class="cancel-button"><i class="fa fa-times"></i>Cancel</button>
+        </div>
+        <h2>Add Leaves</h2>
+        <p class="name">Employee Name: {{ employeeName }} | Employee Code: {{ employeeCode }}</p>
+       
+      </div>
+    
+      <div class="main-section">
+        <div class="left-section">
+          <form>
+            <div class="form-group">
+              <label for="applicationDate">Application Date:</label>
+              <input type="date" id="applicationDate" class="form-control custom-date-input">
+            </div>
+    
+            <div class="form-group">
+              <label for="applicationType">Application Type:</label>
+              <select id="applicationType" class="form-control select-no-box">
+                <option value="casual">Leave Application</option>
+                <option value="sick">Sick Leave</option>
+                <option value="earned">Earned Leave</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              
+              <label for="leaveType">Type:</label>
+              <select id="leaveType" class="form-control select-no-box">
+                <option value="full">Privileged Leave</option>
+                <option value="half">Half Day</option>
+                
+                <p>Available Leave Balance: 25</p>
+              </select>
+            </div>
+            
+    
+            <div class="form-group">
+              
+              <label>From: </label> <input type="date" id="fromDateOptions" class="form-control custom-date-input">
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="fromHalf" value="half"> From Date Half</label>
+                <label><input type="checkbox" name="firstHalf" value="first"> First Half</label>
+                <label><input type="checkbox" name="secondHalf" value="second"> Second Half</label>
+              </div>
+             
+            </div>
+    
+            <div class="form-group">
+              <label>To:</label> <input type="date" id="fromDateOptions" class="form-control custom-date-input">
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="toHalf" value="half"> To Date Half</label>
+                <label><input type="checkbox" name="firstHalf" value="first"> First Half</label>
+              </div>
+            </div>
+    
+            <div class="form-group1">
+              <label for="reason">Reason:</label> <br>
+              <input type="text" id="reason" class="form-control line-input" >
+            </div>
+    
+            <div class="form-group1">
+              <label for="remarks">Remarks:</label> <br>
+              <input type="text" id="remarks" class="form-control line-input">
+            </div>
+    
+            <div class="form-group1">
+              <label for="ccTo">CC To (Email ID):</label> <br>
+              <input type="email" id="ccTo" class="form-control line-input">
+            
+            </div>
+  
+          </form>
+        </div>
+    
+        <div class="right-section">
+          <div class="date-range-inline">
+            <div class="form-group-inline">
+              <label for="fromDate">From:</label>
+              <input type="date" id="fromDate" class="form-control custom-date-input">
+            </div>
+        
+            <div class="form-group-inline">
+              <label for="toDate">To:</label>
+              <input type="date" id="toDate" class="form-control custom-date-input">
+            </div>
+        
+            <!-- Refresh and Print buttons -->
+            <div class="icon-buttons">
+              <button class="icon-button">
+                <i class="fa fa-sync-alt"></i>
+              </button>
+              <button class="icon-button">
+                <i class="fa fa-print"></i>
+              </button>
+            </div>
+          </div>
+  
+    
+            <table class="details-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Roster</th>
+                  <th>Muster</th>
+                  <th>In Time</th>
+                  <th>Out Time</th>
+                  <th>OT Hours</th>
+                  <th>Total Hours</th>
+                  <th>Late Marks</th>
+                  <th>Late Hours</th>
+                  <th>Enter Deprature Mark</th>
+                  <th>Enter Deprature Hours</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01-01-2025</td>
+                  <td>Day</td>
+                  <td>Present</td>
+                  <td>09:00 AM</td>
+                  <td>06:00 PM</td>
+                  <td>2</td>
+                  <td>8</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <tr>
+                  <td>01-01-2025</td>
+                  <td>Day</td>
+                  <td>Present</td>
+                  <td>09:00 AM</td>
+                  <td>06:00 PM</td>
+                  <td>2</td>
+                  <td>8</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <tr>
+                      <td>01-01-2025</td>
+                      <td>Day</td>
+                      <td>Present</td>
+                      <td>09:00 AM</td>
+                      <td>06:00 PM</td>
+                      <td>2</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>0</td> 
+                      <td>0</td>
+                      <td>0</td>
+                  <tr>
+                      <td>01-01-2025</td>
+                      <td>Day</td>
+                      <td>Present</td>
+                      <td>09:00 AM</td>
+                      <td>06:00 PM</td>
+                      <td>2</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <tr>
+                        <td>01-01-2025</td>
+                        <td>Day</td>
+                        <td>Present</td>
+                        <td>09:00 AM</td>
+                        <td>06:00 PM</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>0</td> 
+                        <td>0</td>
+                        <td>0</td>
+  
+                        <tr>
+                          <td>01-01-2025</td>
+                          <td>Day</td>
+                          <td>Present</td>
+                          <td>09:00 AM</td>
+                          <td>06:00 PM</td>
+                          <td>2</td>
+                          <td>8</td>
+                          <td>0</td> 
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>

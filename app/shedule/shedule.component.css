@@ -1,0 +1,304 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+h2, h3, h4 {
+  margin-bottom: 15px;
+}
+
+h3, h4 {
+  font-weight: normal;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.navbar h2 {
+  font-size: 24px;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.commondiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Left, Center, and Right Panels */
+.divleft, .divcenter, .divright {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 20px; /* Adjust spacing between panels */
+}
+
+/* Left Panel Styles */
+.dashboard-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.time-display {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.buttons button:hover {
+  background-color: #45a049;
+}
+
+.roster-section {
+  margin-top: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+/* Right Panel Styles */
+.right-panel {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-summary {
+  margin-bottom: 20px;
+}
+
+.attendance-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.attendance-box {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.attendance-box .attendance-details {
+  font-size: 16px;
+}
+
+.attendance-box.present { background-color: #d4edda; }
+.attendance-box.absent { background-color: #f8d7da; }
+.attendance-box.leave { background-color: #fff3cd; }
+.attendance-box.lwp { background-color: #d1ecf1; }
+.attendance-box.leave-submit { background-color: #f7c4b2; }
+.attendance-box.attendance-submit { background-color: #c2f7b2; }
+.attendance-box.phy { background-color: #f0f0f0; }
+.attendance-box.weo { background-color: #f0f0f0; }
+.attendance-box.reminders { background-color: #f0f0f0; }
+.attendance-box.half-day { background-color: #f0f0f0; }
+.attendance-box.blocked { background-color: #e2e3e5; }
+
+/* Calendar Panel Styles */
+/* Calendar Panel Styles */
+.calendar-panel {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%; /* Ensures the panel itself is full-width */
+}
+
+.full-calendar {
+  width: 100%; /* Take full width of the container */
+  max-width: 100%; /* Prevent overflow */
+  height: auto; /* Adjust height dynamically */
+  box-sizing: border-box; /* Include padding and borders in width/height */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .calendar-panel {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .full-calendar {
+    font-size: 14px; /* Adjust font size for smaller devices */
+    width: 180%; /* Reaffirm full width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-panel {
+    padding: 10px;
+  }
+
+  .full-calendar {
+    font-size: 12px; /* Smaller font size for mobile */
+    width: 100%; /* Full width for mobile */
+  }
+}
+
+/* Attendance Summary Section */
+.attendance-sum {
+  margin-top: 30px;
+}
+
+.sum-box {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-container {
+  margin-top: 20px;
+}
+
+.date-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.date-filter input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #e2e6ea;
+}
+
+.count {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.no-records {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .commondiv {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .divleft, .divcenter, .divright {
+    flex: none;
+    width: 100%;
+  }
+
+  .attendance-row {
+    flex-direction: column;
+  }
+
+  .attendance-box {
+    margin-bottom: 10px;
+  }
+
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1249px) {
+  .commondiv {
+    gap: 20px; /* Adding some space between panels */
+  }
+
+  .divleft, .divcenter, .divright {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%; /* Making sure each section takes 1/3 of the width */
+  }
+
+  .attendance-row {
+    flex-direction: row; /* Ensure rows are horizontal on desktop */
+  }
+
+  .attendance-box {
+    margin-bottom: 0;
+  }
+
+  .summary-cards {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h2 {
+    font-size: 20px;
+  }
+
+  .heading h4 {
+    font-size: 18px;
+  }
+
+  .buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

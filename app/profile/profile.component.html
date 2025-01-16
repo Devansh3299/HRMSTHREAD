@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Info</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Intellisys IT Solution Pvt Ltd</div>
+   
+  </div>
+  <div class="employee-container">
+  <!-- Employee header with name and photo -->
+  <div class="employee-image">
+    <img src="assets/employee (1).png" alt="Employee Image" />
+  </div>
+  <div class="employee-header">
+  
+
+    <!-- Employee name and details -->
+    <div class="employee-details">
+      <!-- Employee name as a headline -->
+
+        <!-- Employee photo -->
+  
+      <div class="headline">
+        <span>Mr.John</span>
+      </div>
+
+      <!-- Flex container for employee details -->
+      <div class="flex-row">
+        <div class="flex-item">
+          <div class="detail">
+            <label>Employee Code:</label>
+            <span>Int123</span>
+          </div>
+          <div class="detail">
+            <label>Location:</label>
+            <span>Pune</span>
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="detail">
+            <label>Department:</label>
+            <span>IT</span>
+          </div>
+          <div class="detail">
+            <label>Manager:</label>
+            <span>John Doe</span>
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="detail">
+            <label>Joining Date:</label>
+            <span>01-Jan-2020</span>
+          </div>
+          <div class="detail">
+            <label>Salary:</label>
+            <span>$50,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+
+
+  <div class="profile-3">
+     <div class="detail-3">
+      <label>Attendance Code:</label>
+      <span>23</span>
+    </div>
+ </div>
+    
+    <div class="detail">
+      <label>Branch Name:</label>
+      <span>Pune-1</span>
+    </div>
+
+    
+    <div class="detail">
+      <label>Reporting Manager:</label>
+      <span>Swapnil</span>
+    </div>
+
+   
+    <div class="detail">
+      <label>Designation:</label>
+      <span>Softwar Developer</span>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+
+
+<div class="employee-m">
+  <div class="empbutton">
+    <!-- Button for Employee Information that stays on the same page -->
+    <button class="EI" [routerLink]="['/home/profiles']">Employee Information</button> 
+
+    <!-- Button for Letter that navigates to another page -->
+    <button class="letter" [routerLink]="['/letter']">Letter</button>
+  </div>
+</div>
+
+  <div class="card-container">
+   
+    <div class="card">
+     
+        <div class="card-header">PF Applicable</div>
+        <div class="card-body4">
+        <p class="card-text"><strong>EPF Joining Date:</strong></p>
+        <p class="card-text"><strong>PF No:</strong> </p>
+        <p class="card-text"><strong>UAN:</strong> </p>
+        <p class="card-text"><strong>Prv Member ID:</strong> </p>
+      
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header">Pension Applicable</div>
+      <div class="card-body">
+        
+        <p class="card-text"><strong>EPS Joining Date:</strong></p>
+        <p class="card-text"><strong>EPS Exit Date:</strong></p>
+       
+      </div>
+    </div>
+
+  
+    <div class="card">
+      <div class="card-header">Esic Applicable</div>
+      <div class="card-body">
+  
+        <p class="card-text"><strong>ESIC NO:</strong></p>
+       
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">PT Applicable</div>
+      <div class="card-body">
+        
+        <p class="card-text"><strong>EPS NO:</strong> </p>
+    
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container2">
+    <p><strong>KYC Detail:</strong> </p>
+  </div>
+
+
+
+<div class="card-container">
+  <!-- Card 1 -->
+  <div class="card">
+   
+      <div class="card-header"></div>
+      <div class="card-body">
+      <p class="card-text"><strong>PAN Number:</strong></p>
+    
+    
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <p class="card-text"><strong>Aadhar Number:</strong></p>
+     
+    </div>
+  </div>
+ 
+ </div>
+
+ <div class="container2">
+  <p><strong>Employee Status:</strong> 
+</div>
+
+<div class="card-container">
+  <!-- Card 1 -->
+  <div class="card">
+   
+      <div class="card-header">Branch:</div>
+      <div class="card-body">
+      <p class="card-text"><strong></strong></p>
+    
+    
+    </div>
+  </div>
+
+<div class="card">
+   
+  <div class="card-header">Department:</div>
+  <div class="card-body">
+  <p class="card-text"><strong></strong></p>
+
+
+</div>
+</div>
+
+<div class="card">
+   
+  <div class="card-header">Grade:</div>
+  <div class="card-body">
+  <p class="card-text"><strong></strong></p>
+
+
+</div>
+</div>
+
+<div class="card">
+   
+  <div class="card-header">Designation:</div>
+  <div class="card-body">
+  <p class="card-text"><strong></strong></p>
+
+
+</div>
+</div>
+
+<div class="card">
+   
+  <div class="card-header">Employee Categeory:</div>
+  <div class="card-body">
+  <p class="card-text"><strong></strong></p>
+</div>
+</div>
+
+<div class="card">
+    <div class="card-header">Project Type:</div>
+  <div class="card-body">
+  <p class="card-text"><strong></strong></p>
+</div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
